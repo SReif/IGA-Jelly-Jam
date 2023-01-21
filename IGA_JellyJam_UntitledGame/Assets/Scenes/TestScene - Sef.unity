@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 54975017}
   m_Layer: 0
   m_Name: DecayedGround (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -699,8 +699,7 @@ MonoBehaviour:
   forwardSpeed: 1
   upwardSpeed: 10
   downwardSpeed: 5
-  menuTransition: {fileID: 17588194}
-  cameraFollow: {fileID: 963194229}
+  restartOnDeath: {fileID: 174691718}
 --- !u!95 &174691717
 Animator:
   serializedVersion: 5
@@ -721,6 +720,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &174691718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174691713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3777f090bde94ac4d94087a097a3f5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuTransition: {fileID: 17588194}
+  cameraFollow: {fileID: 963194229}
 --- !u!1 &184594841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2632,7 +2645,7 @@ GameObject:
   - component: {fileID: 1095029291}
   m_Layer: 0
   m_Name: RestoredGround (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2744,7 +2757,7 @@ GameObject:
   - component: {fileID: 1254493990}
   m_Layer: 0
   m_Name: RestoredGround
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3506,7 +3519,7 @@ GameObject:
   - component: {fileID: 1702747447}
   m_Layer: 0
   m_Name: DecayedGround
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3881,7 +3894,7 @@ GameObject:
   - component: {fileID: 1879658036}
   m_Layer: 0
   m_Name: DecayedGround (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

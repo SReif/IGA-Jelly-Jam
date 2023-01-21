@@ -8,8 +8,7 @@ public class PlayerController : MonoBehaviour
     public float upwardSpeed;
     public float downwardSpeed;
 
-    public MenuTransition menuTransition;
-    public CameraFollow cameraFollow;
+    public RestartOnDeath restartOnDeath;
 
     private Vector3 playerStart;
     private Vector3 cameraStart;
@@ -19,9 +18,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        menuTransition = GameObject.Find("Main Menu").GetComponentInChildren<MenuTransition>();
-        cameraFollow = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
         cameraStart = GameObject.Find("Main Camera").GetComponent<Transform>().position;
+        restartOnDeath = GetComponent<RestartOnDeath>();
 
         playerStart = this.transform.position;
 
@@ -46,7 +44,7 @@ private void OnTriggerEnter(Collider other)
         // Game over if touching ground
         if (other.tag == "Ground")
         {
-            PlayerDeath();
+            restartOnDeath.PlayerDeath(playerStart, cameraStart);
         }
         // Turn something into a restorable
         if (other.tag == "Restorable")
@@ -69,13 +67,5 @@ private void OnTriggerEnter(Collider other)
     {
         transform.Translate(Vector3.down * Time.deltaTime * downwardSpeed);
         transform.Translate(Vector3.right * Time.deltaTime * forwardSpeed);
-    }
-
-    //Sets player back to start and enables main menu
-    private void PlayerDeath()
-    {
-        transform.position = playerStart;
-        cameraFollow.transform.position = cameraStart;
-        menuTransition.EnableMainMenu();
     }
 }

@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
         playerStart = this.transform.position;
 
         playerAnimator = gameObject.GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -39,10 +40,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //Player dies on trigger
-    private void OnTriggerEnter(Collider other)
+private void OnTriggerEnter(Collider other)
     {
-        PlayerDeath();
+        Debug.Log(other.gameObject.ToString());
+        // Game over if touching ground
+        if (other.tag == "Ground")
+        {
+            PlayerDeath();
+        }
+        // Turn something into a restorable
+        if (other.tag == "Restorable")
+        {
+            var restoreEntity = other.gameObject.GetComponent<RestorableEntity>();
+            Debug.Log(restoreEntity.ToString());
+            restoreEntity.TurnFromDecayToRestore();
+        }
     }
 
     //Causes player object to move up

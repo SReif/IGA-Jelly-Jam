@@ -12,13 +12,20 @@ public class PlayerController : MonoBehaviour
     public CameraFollow cameraFollow;
 
     private Vector3 playerStart;
+    private Vector3 cameraStart;
+
+    Animator playerAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
         menuTransition = GameObject.Find("Main Menu").GetComponentInChildren<MenuTransition>();
         cameraFollow = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
+        cameraStart = GameObject.Find("Main Camera").GetComponent<Transform>().position;
+
         playerStart = this.transform.position;
+
+        playerAnimator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -32,16 +39,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //Player dies on trigger
-    private void OnTriggerEnter(Collider other)
+private void OnTriggerEnter(Collider other)
     {
-        PlayerDeath();
+        Debug.Log(other.gameObject.ToString());
+        // Game over if touching ground
+        if (other.tag == "Ground")
+        {
+            PlayerDeath();
+        }
+        // Turn something into a restorable
+        if (other.tag == "Restorable")
+        {
+            var restoreEntity = other.gameObject.GetComponent<RestorableEntity>();
+            Debug.Log(restoreEntity.ToString());
+            restoreEntity.TurnFromDecayToRestore();
+        }
     }
 
     //Causes player object to move up
     private void PlayerFly()
     {
         transform.Translate(Vector3.up * Time.deltaTime * upwardSpeed);
+        playerAnimator.SetTrigger("Flap");
     }
 
     //Causes player to move forward and fall
@@ -55,7 +74,7 @@ public class PlayerController : MonoBehaviour
     private void PlayerDeath()
     {
         transform.position = playerStart;
-        cameraFollow.transform.position = new Vector3(-9, 1, -20);
+        cameraFollow.transform.position = cameraStart;
         menuTransition.EnableMainMenu();
     }
 }

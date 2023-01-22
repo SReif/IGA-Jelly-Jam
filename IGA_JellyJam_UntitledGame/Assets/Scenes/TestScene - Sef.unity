@@ -1685,7 +1685,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.8
+  m_fontSize: 32.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6162,6 +6162,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8186709929836663186, guid: a14f503779e92c24ea47218f4aecf59d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec683425d7015414ab273e7447bd98a6, type: 2}
     - target: {fileID: 8186709929836663212, guid: a14f503779e92c24ea47218f4aecf59d, type: 3}
       propertyPath: m_Name
       value: dead shroom 1

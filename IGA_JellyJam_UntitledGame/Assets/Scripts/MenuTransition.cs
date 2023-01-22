@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MenuTransition : MonoBehaviour
 {
+    public AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class MenuTransition : MonoBehaviour
     //Enables Main Menu
     public void EnableMainMenu()
     {
+        audioManager.Stop("Background Music");
         this.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
@@ -30,6 +32,7 @@ public class MenuTransition : MonoBehaviour
     //Disables Main Menu
     private void DisableMainMenu()
     {
+        audioManager.Play("Background Music");
         this.gameObject.SetActive(false);
     }
 }

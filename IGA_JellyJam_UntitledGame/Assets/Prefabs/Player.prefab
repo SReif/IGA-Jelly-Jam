@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8541432924644161808, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5aba44d4fb8f74842826e38d41808794, type: 2}
     - target: {fileID: -7048804437079006633, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.4304595
@@ -77,39 +81,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5486861545291791519, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.06248136
+      value: 0.06250183
       objectReference: {fileID: 0}
     - target: {fileID: -5486861545291791519, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7619305
+      value: 0.7617223
       objectReference: {fileID: 0}
     - target: {fileID: -5486861545291791519, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.64314187
+      value: -0.64335257
       objectReference: {fileID: 0}
     - target: {fileID: -5486861545291791519, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.04389077
+      value: -0.044385858
       objectReference: {fileID: 0}
+    - target: {fileID: -1548096100902131878, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f552d6f80b830147a303bc68d540786, type: 2}
     - target: {fileID: 919132149155446097, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4511418693156332004, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.02160132
+      value: -0.11311244
       objectReference: {fileID: 0}
     - target: {fileID: 4511418693156332004, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.76281464
+      value: 0.74789697
       objectReference: {fileID: 0}
     - target: {fileID: 4511418693156332004, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6438202
+      value: 0.6325826
       objectReference: {fileID: 0}
     - target: {fileID: 4511418693156332004, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.05605942
+      value: -0.16641784
       objectReference: {fileID: 0}
     - target: {fileID: 4511418693156332004, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -117,12 +125,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4511418693156332004, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 6.5130005
+      value: 21.513
       objectReference: {fileID: 0}
     - target: {fileID: 4511418693156332004, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -80.20099
       objectReference: {fileID: 0}
+    - target: {fileID: 6575179928982927382, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5aba44d4fb8f74842826e38d41808794, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 077e816be8b8e9640bcaedb8d6e7b7b2, type: 3}
 --- !u!1 &926572381996616969 stripped
@@ -191,9 +203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d954767b680da5e4bb79e5614cffb5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 2
-  upwardSpeed: 10
-  downwardSpeed: 5
+  forwardSpeed: 1
+  upwardSpeed: 5
+  downwardSpeed: 3
   restartOnDeath: {fileID: 174691718}
 --- !u!114 &174691718
 MonoBehaviour:

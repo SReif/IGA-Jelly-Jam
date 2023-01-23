@@ -7,12 +7,14 @@ using UnityEngine;
 /// </summary>
 public class GameTimer : MonoBehaviour
 {
-
     [SerializeField] private float gameTimeDurationInMinutes;
+    public Light myLight;
+    private bool lightIncreasing;
+    public float intensitySpeed = 0.0125f;
 
     private float gameTimeDurationInSeconds;
     private float halfwayTimeInSeconds;
-    private float currentTime;
+    [SerializeField] private float currentTime;
 
     private bool timeReachedHalf;
     private bool timeReachedEnd;
@@ -21,6 +23,8 @@ public class GameTimer : MonoBehaviour
     {
         gameTimeDurationInSeconds = gameTimeDurationInMinutes * 60f;
         halfwayTimeInSeconds = gameTimeDurationInSeconds / 2f;
+        myLight = GetComponent<Light>();
+        lightIncreasing = true;
     }
 
     // Start is called before the first frame update
@@ -32,12 +36,23 @@ public class GameTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(lightIncreasing)
+        {
+            IncreaseLightIntensity();
+        }
+        
+        else if(!lightIncreasing)
+        {
+            DecreaseLightIntensity();
+        }
+
         TimerTracker();
     }
 
     private void TimerTracker()
     {
         currentTime += Time.deltaTime;
+
         if (!timeReachedHalf && currentTime >= halfwayTimeInSeconds)
         {
             GameHalfwayTrigger();
@@ -51,6 +66,20 @@ public class GameTimer : MonoBehaviour
 
     }
 
+    private void IncreaseLightIntensity()
+    {
+        myLight.intensity += 0.3f * Time.deltaTime * intensitySpeed;
+        if(myLight.intensity >= 1.6f)
+        {
+            lightIncreasing = false;
+        }
+    }
+
+    private void DecreaseLightIntensity()
+    {
+        myLight.intensity -= 0.3f * Time.deltaTime * intensitySpeed;
+    }
+
     // Placeholder to trigger game ending when time runs out
     private void GameHalfwayTrigger()
     {
@@ -60,6 +89,6 @@ public class GameTimer : MonoBehaviour
     // Placeholder to trigger game ending when time runs out
     private void GameEndsTrigger()
     {
-
+        
     }
 }

@@ -12,6 +12,11 @@ public class RestorableEntity : MonoBehaviour
         this.gameObject.GetComponent<MeshRenderer>().material = materialRestore;
     }
 
+    public void TurnFromRestoreToDecay()
+    {
+        this.gameObject.GetComponent<MeshRenderer>().material = materialDecay;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

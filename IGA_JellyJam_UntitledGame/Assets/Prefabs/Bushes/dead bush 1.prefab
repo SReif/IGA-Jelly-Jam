@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5502437833188375742}
   - component: {fileID: 5502437833188375713}
   - component: {fileID: 5502437833188375741}
+  - component: {fileID: 809571795637850174}
   m_Layer: 0
   m_Name: dead bush 1
   m_TagString: Restorable
@@ -112,3 +113,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.59484, y: 0.47438684, z: 10.788063}
   m_Center: {x: -0.005475092, y: -0.03285086, z: -0.3714056}
+--- !u!114 &809571795637850174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5502437833188375712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fb4716e5f052c48a3f71d3700705f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialDecay: {fileID: 2100000, guid: cafe9404eead3f240bdfc2bf01705b6c, type: 2}
+  materialRestore: {fileID: 2100000, guid: fea2acf37ad04d747a05ebab4cb2dc2c, type: 2}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3246922710038511731}
   - component: {fileID: 3246922710038511728}
   - component: {fileID: 3246922710038511732}
+  - component: {fileID: 7985809253565308466}
   m_Layer: 0
   m_Name: dead shroom 2
   m_TagString: Restorable
@@ -112,3 +113,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.32344246, y: 0.49258217, z: 10.770304}
   m_Center: {x: -0.1288681, y: 0.10873246, z: 0.012164116}
+--- !u!114 &7985809253565308466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3246922710038511729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fb4716e5f052c48a3f71d3700705f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialDecay: {fileID: 2100000, guid: 67673ada28ae1844f8ee32f15b601a39, type: 2}
+  materialRestore: {fileID: 2100000, guid: 7563e4d532d411d44b0e6e45674140c2, type: 2}

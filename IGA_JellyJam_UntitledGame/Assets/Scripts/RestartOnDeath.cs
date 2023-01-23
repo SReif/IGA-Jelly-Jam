@@ -6,6 +6,8 @@ public class RestartOnDeath : MonoBehaviour
 {
     public MenuTransition menuTransition;
     public CameraFollow cameraFollow;
+    public GameTimer gameTimer;
+    public GameObject[] restorables;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,14 @@ public class RestartOnDeath : MonoBehaviour
     //Sets player back to start and enables main menu
     public void PlayerDeath(Vector3 playerStart, Vector3 cameraStart)
     {
+        restorables = GameObject.FindGameObjectsWithTag("Restorable");
+        foreach(GameObject restorable in restorables)
+        {
+            restorable.GetComponent<RestorableEntity>().TurnFromRestoreToDecay();
+        }
+
         transform.position = playerStart;
+        gameTimer.myLight.intensity = 0.4f;
         cameraFollow.transform.position = cameraStart;
         menuTransition.EnableMainMenu();
     }

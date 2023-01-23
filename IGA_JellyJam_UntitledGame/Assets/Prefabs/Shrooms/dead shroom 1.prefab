@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8186709929836663186}
   - component: {fileID: 8186709929836663213}
   - component: {fileID: 8186709929836663185}
+  - component: {fileID: 5159902765880700723}
   m_Layer: 0
   m_Name: dead shroom 1
   m_TagString: Restorable
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1386a1613ec622141b0a2143da039b5a, type: 2}
+  - {fileID: 2100000, guid: ec683425d7015414ab273e7447bd98a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,3 +113,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.586359, y: 0.48941168, z: 10.577955}
   m_Center: {x: -0.13572606, y: 0.04201039, z: -0.054154396}
+--- !u!114 &5159902765880700723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186709929836663212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fb4716e5f052c48a3f71d3700705f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialDecay: {fileID: 2100000, guid: ec683425d7015414ab273e7447bd98a6, type: 2}
+  materialRestore: {fileID: 2100000, guid: ce50d4607bee7404599393b56f868df9, type: 2}

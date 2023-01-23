@@ -7,7 +7,7 @@ public class SceneTransition : MonoBehaviour
 {
     void Start()
     {
-        AudioManager.Instance.Play("Intro Music");
+        //AudioManager.Instance.Play("Intro Music");
         Debug.Log("Playing music");
     }
 
@@ -20,6 +20,6 @@ public class SceneTransition : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(0);
-        AudioManager.Instance.Play("Intro Music");
+        //AudioManager.Instance.Play("Intro Music");
     }
 }

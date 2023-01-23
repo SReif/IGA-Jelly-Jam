@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class MenuTransition : MonoBehaviour
 {
-    public AudioManager audioManager;
+    public GameObject mainCamera;
+    public AudioClip audioClip;
     // Start is called before the first frame update
     void Start()
     {
+        audioClip = mainCamera.GetComponent<AudioSource>().clip;
         Time.timeScale = 0;
     }
 
@@ -24,15 +26,18 @@ public class MenuTransition : MonoBehaviour
     //Enables Main Menu
     public void EnableMainMenu()
     {
-        audioManager.Stop("Background Music");
+        //AudioManager.Instance.Stop("Background Music");
         this.gameObject.SetActive(true);
+        mainCamera.GetComponent<AudioSource>().Stop();
         Time.timeScale = 0;
     }
 
     //Disables Main Menu
     private void DisableMainMenu()
     {
-        audioManager.Play("Background Music");
+        
+        mainCamera.GetComponent<AudioSource>().PlayOneShot(audioClip);
+        //AudioManager.Instance.Play("Background Music");
         this.gameObject.SetActive(false);
     }
 }

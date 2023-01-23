@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2595114026934621496}
   - component: {fileID: 2595114026934621499}
   - component: {fileID: 2595114026934621503}
+  - component: {fileID: 5352248564928918793}
   m_Layer: 0
   m_Name: plain rock 2
   m_TagString: Restorable
@@ -112,3 +113,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7299391, y: 0.39657554, z: 9.983323}
   m_Center: {x: 0.015701199, y: -0.063053705, z: -0.1940484}
+--- !u!114 &5352248564928918793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2595114026934621498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fb4716e5f052c48a3f71d3700705f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialDecay: {fileID: 2100000, guid: b35b32b2ee38fba4bacedad3a5c0de77, type: 2}
+  materialRestore: {fileID: 2100000, guid: d75598450c5ac22438ad537e240b2564, type: 2}

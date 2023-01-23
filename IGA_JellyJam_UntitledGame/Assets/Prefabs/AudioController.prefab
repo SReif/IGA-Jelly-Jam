@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6822822880374844155}
   - component: {fileID: 6822822880374844154}
+  - component: {fileID: 108260219176528311}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -57,3 +58,11 @@ MonoBehaviour:
     pitch: 0
     loop: 1
     source: {fileID: 0}
+--- !u!81 &108260219176528311
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6822822880374844157}
+  m_Enabled: 1

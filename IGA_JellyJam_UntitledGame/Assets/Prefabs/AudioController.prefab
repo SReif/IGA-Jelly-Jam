@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Background
-    clip: {fileID: 8300000, guid: cc76401bb2f79074abc4cf0e6e714a98, type: 3}
-    volume: 0.5
+    clip: {fileID: 8300000, guid: 6c2d65dbb38a63f4195567349a8bfd8d, type: 3}
+    volume: 0.25
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -72,12 +72,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Restore
     clip: {fileID: 8300000, guid: 18e74f8dde99d8145a6eb9bea7a90ba9, type: 3}
-    volume: 0.5
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Death
-    clip: {fileID: 8300000, guid: 6b0d19ea5d4c2a64181599ede0f671c4, type: 3}
+    clip: {fileID: 8300000, guid: 675fedbf4761e7b42a83ce49254af3c9, type: 3}
     volume: 1
     pitch: 1
     loop: 0

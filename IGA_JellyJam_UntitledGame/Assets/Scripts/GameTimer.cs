@@ -23,8 +23,8 @@ public class GameTimer : MonoBehaviour
 
     private void Awake()
     {
-        playerController = GetComponent<PlayerController>();
-        restartOnDeath = GetComponent<RestartOnDeath>();
+        //playerController = GetComponent<PlayerController>();
+        //restartOnDeath = GetComponent<RestartOnDeath>();
         myLight = GetComponent<Light>();
 
         gameTimeDurationInSeconds = gameTimeDurationInMinutes * 60f;
@@ -68,6 +68,7 @@ public class GameTimer : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().PlayOneShot("Restore");
             StartCoroutine(Delay(3f));
+            this.GetComponent<PlayerController>().enabled = false;
         }
 
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MenuTransition : MonoBehaviour
 {
     public GameObject mainCamera;
-    public AudioClip[] audioSource;
+
     // Start is called before the first frame update
     void Start()
     {

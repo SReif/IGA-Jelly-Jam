@@ -126,4 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialDecay: {fileID: 2100000, guid: 67673ada28ae1844f8ee32f15b601a39, type: 2}
-  materialRestore: {fileID: 2100000, guid: 7563e4d532d411d44b0e6e45674140c2, type: 2}
+  materialRestore: {fileID: 2100000, guid: e42043de91b711f4c8712f3b7ba4fc95, type: 2}

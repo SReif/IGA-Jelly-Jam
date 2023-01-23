@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d954767b680da5e4bb79e5614cffb5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 1
+  forwardSpeed: 1.125
   upwardSpeed: 5
   downwardSpeed: 3
   restartOnDeath: {fileID: 174691718}
@@ -221,3 +221,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuTransition: {fileID: 0}
   cameraFollow: {fileID: 0}
+  gameTimer: {fileID: 0}
+  restorables: []

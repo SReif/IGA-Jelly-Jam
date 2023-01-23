@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour
     public float upwardSpeed;
     public float downwardSpeed;
 
+    private bool isFlapping;
+
     public RestartOnDeath restartOnDeath;
 
-    private Vector3 playerStart;
-    private Vector3 cameraStart;
+    public Vector3 playerStart;
+    public Vector3 cameraStart;
 
     Animator playerAnimator;
 
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
         playerStart = this.transform.position;
 
         playerAnimator = gameObject.GetComponent<Animator>();
+        isFlapping = false;
 
     }
 
@@ -36,6 +39,12 @@ public class PlayerController : MonoBehaviour
         {
             PlayerFly();
         }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            FindObjectOfType<AudioManager>().Stop("Flap");
+            isFlapping = false;
+        }
     }
 
 private void OnTriggerEnter(Collider other)
@@ -44,7 +53,10 @@ private void OnTriggerEnter(Collider other)
         // Game over if touching ground
         if (other.tag == "Ground")
         {
-            restartOnDeath.PlayerDeath(playerStart, cameraStart);
+            FindObjectOfType<AudioManager>().PlayOneShot("Death");
+            FindObjectOfType<AudioManager>().Stop("Background");
+            StartCoroutine(Delay(3f));
+            this.GetComponent<PlayerController>().enabled = false;
         }
         // Turn something into a restorable
         if (other.tag == "Restorable")
@@ -60,6 +72,12 @@ private void OnTriggerEnter(Collider other)
     {
         transform.Translate(Vector3.up * Time.deltaTime * upwardSpeed);
         playerAnimator.SetTrigger("Flap");
+        if(!isFlapping)
+        {
+            FindObjectOfType<AudioManager>().Play("Flap");
+            isFlapping = true;
+        }
+        
     }
 
     //Causes player to move forward and fall
@@ -67,5 +85,11 @@ private void OnTriggerEnter(Collider other)
     {
         transform.Translate(Vector3.down * Time.deltaTime * downwardSpeed);
         transform.Translate(Vector3.right * Time.deltaTime * forwardSpeed);
+    }
+
+    IEnumerator Delay(float time)
+    {
+        yield return new WaitForSecondsRealtime(time);
+        restartOnDeath.PlayerDeath(playerStart, cameraStart);
     }
 }

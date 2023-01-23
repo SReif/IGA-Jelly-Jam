@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6822822880374844155}
   - component: {fileID: 6822822880374844154}
-  - component: {fileID: 108260219176528311}
+  - component: {fileID: 1985265191}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -46,19 +46,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Background Music
-    clip: {fileID: 8300000, guid: 4467b0854e45f0340b4da043ad7f693e, type: 3}
-    volume: 1
-    pitch: 0
+  - name: Background
+    clip: {fileID: 8300000, guid: cc76401bb2f79074abc4cf0e6e714a98, type: 3}
+    volume: 0.5
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Intro Music
+  - name: Intro
     clip: {fileID: 8300000, guid: 4a610baa0bc48ae4bb13d341cba7195c, type: 3}
-    volume: 1
-    pitch: 0
+    volume: 0.5
+    pitch: 1
     loop: 1
     source: {fileID: 0}
---- !u!81 &108260219176528311
+  - name: Menu Loop
+    clip: {fileID: 8300000, guid: b83c341fbdd1863458bcc5e86a92b8c5, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Flap
+    clip: {fileID: 8300000, guid: 7a0e07c285909fb4bb38f76d6218bd4e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Restore
+    clip: {fileID: 8300000, guid: 18e74f8dde99d8145a6eb9bea7a90ba9, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Death
+    clip: {fileID: 8300000, guid: 6b0d19ea5d4c2a64181599ede0f671c4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+--- !u!81 &1985265191
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

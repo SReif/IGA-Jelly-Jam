@@ -31,9 +31,12 @@ public class RestartOnDeath : MonoBehaviour
             restorable.GetComponent<RestorableEntity>().TurnFromRestoreToDecay();
         }
 
+        this.GetComponent<PlayerController>().enabled = true;
         transform.position = playerStart;
         gameTimer.myLight.intensity = 0.4f;
         cameraFollow.transform.position = cameraStart;
         menuTransition.EnableMainMenu();
     }
+
+    
 }

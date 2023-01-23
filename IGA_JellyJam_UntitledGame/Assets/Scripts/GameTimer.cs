@@ -7,23 +7,29 @@ using UnityEngine;
 /// </summary>
 public class GameTimer : MonoBehaviour
 {
-    [SerializeField] private float gameTimeDurationInMinutes;
+    public PlayerController playerController;
+    public RestartOnDeath restartOnDeath;
     public Light myLight;
-    private bool lightIncreasing;
-    public float intensitySpeed = 0.0125f;
 
+    [SerializeField] private float gameTimeDurationInMinutes;
+    [SerializeField] private float currentTime;
+    public float intensitySpeed = 0.0125f;
     private float gameTimeDurationInSeconds;
     private float halfwayTimeInSeconds;
-    [SerializeField] private float currentTime;
 
+    private bool lightIncreasing;
     private bool timeReachedHalf;
     private bool timeReachedEnd;
 
     private void Awake()
     {
+        playerController = GetComponent<PlayerController>();
+        restartOnDeath = GetComponent<RestartOnDeath>();
+        myLight = GetComponent<Light>();
+
         gameTimeDurationInSeconds = gameTimeDurationInMinutes * 60f;
         halfwayTimeInSeconds = gameTimeDurationInSeconds / 2f;
-        myLight = GetComponent<Light>();
+        
         lightIncreasing = true;
     }
 
@@ -60,8 +66,8 @@ public class GameTimer : MonoBehaviour
         }
         if (!timeReachedEnd && currentTime >= gameTimeDurationInSeconds)
         {
-            GameEndsTrigger();
-            timeReachedEnd = true;
+            FindObjectOfType<AudioManager>().PlayOneShot("Restore");
+            StartCoroutine(Delay(3f));
         }
 
     }
@@ -89,6 +95,13 @@ public class GameTimer : MonoBehaviour
     // Placeholder to trigger game ending when time runs out
     private void GameEndsTrigger()
     {
-        
+        restartOnDeath.PlayerDeath(playerController.playerStart, playerController.cameraStart);
+    }
+
+    IEnumerator Delay(float time)
+    {
+        yield return new WaitForSecondsRealtime(time);
+        GameEndsTrigger();
+        timeReachedEnd = true;
     }
 }
